@@ -1,0 +1,20 @@
+[
+  {
+    "userId": 1,
+    "username": "Eneas",
+    "email": "eneasbaroni@gmail.com",
+    "direccion": "Duarte Quiros",
+    "products": [],
+    "_id": "1",
+    "timestamp": 1671544865794
+  },
+  {
+    "userId": 2,
+    "username": "Martin",
+    "email": "martin@gmail.com",
+    "direccion": "Bv Los Alemanes",
+    "products": [],
+    "_id": "2",
+    "timestamp": 1671717410573
+  }
+]
