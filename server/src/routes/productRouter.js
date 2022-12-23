@@ -1,19 +1,12 @@
 import { Router } from "express";
 import auth from '../middleware/auth.js';
-import passport from "../middleware/passport.js";
 import admin from '../middleware/admin.js';
 
 import { getProducts, postProduct, getProductById, deleteProductById, updateProductById, getProductByCat } from "../controllers/products.js";
 
 const products = Router();
 
-
-/* products.get("/", getProducts); */
-
-/* acceso a products si esta logueado */
 products.get("/", auth, getProducts);
-
-
 
 products.post("/", auth, admin, postProduct);
 

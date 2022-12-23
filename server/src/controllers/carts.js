@@ -24,11 +24,7 @@ const getCartById = async (req, res) => {
 
 const postCart = async (req, res) => {
   try{
-    let { userId, username, email, direccion } = req.body;
-    /* let userId = req.body.userId  
-    let username = req.body.username
-    let email = req.body.email
-    let direccion = req.body.direccion */
+    let { userId, username, email, direccion } = req.body;    
     const cart = await saveCart(userId, username, email, direccion);
     res.status(201).send(cart);
   } catch (error) {

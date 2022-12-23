@@ -27,8 +27,8 @@ class MongoContainer {
 
   async save(obj) {
     try { 
-      let timestamp = new Date().getTime(); //VERIFICAR FUNCION **** 
-      obj.timestamp = timestamp   //VERIFICAR FUNCION ****  
+      let timestamp = new Date().getTime();  
+      obj.timestamp = timestamp    
       const newObj = new this.schema(obj);
       const data = await newObj.save();  
       return data;
@@ -48,8 +48,8 @@ class MongoContainer {
 
   async changeById(idEl, obj) {    
     try {
-      let timestamp = new Date().getTime(); //VERIFICAR FUNCION **** 
-      obj.timestamp = timestamp   //VERIFICAR FUNCION **** 
+      let timestamp = new Date().getTime();  
+      obj.timestamp = timestamp   
       
       const el = await this.schema.findByIdAndUpdate(idEl, obj)      
       return ('elemento Actualizado') 

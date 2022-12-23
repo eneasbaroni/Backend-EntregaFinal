@@ -17,7 +17,7 @@ class UserContainer extends ArchivoContainer {
       if (userExist) { //si el usuario existe
         return false; //devuelvo false
       } else { //si el usuario no existe
-        const hashPass = await bcrypt.hash(obj.password, 8) //encripto la contraseña
+        const hashPass = await bcrypt.hash(obj.password, 8) 
         obj.password = hashPass; //guardo la contraseña encriptada en el usuario
         const data = await super.save(obj); //guardo el usuario en la base de datos        
         return data; //devuelvo el usuario
@@ -32,9 +32,9 @@ class UserContainer extends ArchivoContainer {
     try {
       const users = await this.list();
       const userExist = users.find(user => user.email === email); //busco si el usuario ya existe en la base de datos
-      if (userExist) { //si el usuario existe
+      if (userExist) { 
         return userExist; 
-      } else { //si el usuario no existe
+      } else {
         return false;
       }
     } catch (error) {

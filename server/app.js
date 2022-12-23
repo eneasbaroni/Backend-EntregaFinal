@@ -26,11 +26,6 @@ const corsOptions = {
 };
 app.use(cors(corsOptions));
 
-/* app.use(cors());
-app.use(cors({ origin: 'http://localhost:3000', credentials: true })); */
-
-
-
 //inicioalizo MongoAtlas
 import MongoStore from 'connect-mongo';
 /* const MongoStore = require("connect-mongo"); */
@@ -62,7 +57,6 @@ app.use(
 
 );
 
-
 //middleware para inicializar passport y unir session con passport
 app.use(passport.initialize());
 app.use(passport.session());
@@ -93,37 +87,15 @@ const io = new Server(httpServer, {
 
 
 
-
-
-
-/* import http from 'http';
-import { Server } from 'socket.io';
-const io = new Server(http, {
-  cors: {
-    origin: 'http://localhost:3000',    
-    credentials: true,
-  },
-});
- */
-
-//conexion a socket.io
-/* const httpServer = http.createServer(app);
-io.attach(httpServer); */
-
 //Funciones del chat --> pasar a controllers
 import { getChat, sendMessage } from './src/controllers/chat.js';
-
-
 
 io.on('connection', async function(socket) {
   //mensaje en consola cuando se conecta un usuario
   console.log('Un cliente se ha conectado'); 
   //primera conexion del usuario recibe los mensajes de la DB
   const messages = await getChat();  
-  socket.emit('messages', messages);
-
-  //cada vez que se agrega un producto, se le envia a todos los usuarios para renderizarlo
-  io.sockets.emit('productos');
+  socket.emit('messages', messages); 
 
   //escucho el los mensajes del cliente, lo agrego a la db  y le paso a TODOS (io.sockets.emit) los clientes los mensajes
   socket.on ('new-message', async function (data){    

@@ -28,9 +28,9 @@ class UserContainer extends MongoContainer {
   async findByEmail (email) {
     try {
       const userExist = await User.findOne  ({email: email }); //busco si el usuario ya existe en la base de datos
-      if (userExist) { //si el usuario existe
+      if (userExist) { 
         return userExist; 
-      } else { //si el usuario no existe
+      } else { 
         return false;
       }
     } catch (error) {

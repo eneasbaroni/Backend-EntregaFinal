@@ -78,7 +78,6 @@ const updateProductById = async (req, res) => {
   }
 };
 
-//queda pendiente el update y el delete
 
 export { getProducts, postProduct, getProductById, deleteProductById, updateProductById, getProductByCat };
 

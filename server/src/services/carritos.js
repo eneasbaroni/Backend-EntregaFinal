@@ -2,10 +2,6 @@ import { cartsDao } from "../containers/Daos/index.js";
 import {ordersDao} from "../containers/Daos/index.js";
 import { productsDao } from "../containers/Daos/index.js";
 
-/* Create all this functions
-{getAllCarts, getCart, saveCart, updateCart, deleteCart, saveProdToCart, deleteProdFromCart}
- */
-
 const getAllCarts = async () => {
   const data = await cartsDao.list();
   return data;
