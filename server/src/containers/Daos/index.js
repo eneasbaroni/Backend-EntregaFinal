@@ -8,8 +8,8 @@ let ordersDao;
 
 const PERS = config.database;
 
-import dotenv from 'dotenv';
-dotenv.config()
+/* import dotenv from 'dotenv';
+dotenv.config() */
 
 switch (PERS) {
   case "mongodb":    

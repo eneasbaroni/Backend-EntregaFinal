@@ -12,7 +12,7 @@ let config={
 
 if (process.env.NODE_ENV === 'development') {
   config.url = "http://localhost:3000";
-  config.database = 'mongodb';
+  config.database = 'json';
   config.databaseUrl = process.env.MONGO_URL || 'mongodb://localhost:27017/test';
   config.mail = 'eneasbaroni@gmail.com';
   config.port = 8080;

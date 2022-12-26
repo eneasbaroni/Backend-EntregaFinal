@@ -64,7 +64,11 @@ const Register = () => {
       alert('Usuario registrado con exito')
       navigate('/login')
     })
-    .catch(err => console.log(err))
+    .catch(err => 
+      {
+        alert('Ya existe usuario con ese email')
+        console.log(err)
+      })
   }
 
 
